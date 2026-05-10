@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/main.tsx","./src/types.ts","./src/components/competitorcard.tsx","./src/components/eventcard.tsx","./src/components/navbar.tsx","./src/components/standingsbar.tsx","./src/data/competitors.ts","./src/data/events.ts","./src/lib/standings.ts","./src/pages/competitors.tsx","./src/pages/home.tsx"],"version":"5.9.3"}
