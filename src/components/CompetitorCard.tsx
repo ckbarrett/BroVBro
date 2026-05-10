@@ -21,7 +21,6 @@ export default function CompetitorCard({ competitor }: Props) {
           {competitor.team}
         </span>
       </div>
-      <p className="mt-1 text-sm italic text-slate-400">{competitor.trait}</p>
       <p className="mt-4 text-sm leading-relaxed text-slate-300">
         {competitor.blurb}
       </p>

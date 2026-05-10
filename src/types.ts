@@ -14,6 +14,5 @@ export interface GameEvent {
 export interface Competitor {
   name: string;
   team: Team;
-  trait: string;
   blurb: string;
 }
