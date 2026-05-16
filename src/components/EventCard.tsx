@@ -32,19 +32,32 @@ const cardBorder: Record<GameEvent["status"], string> = {
 };
 
 export default function EventCard({ event }: Props) {
+  const borderClass = event.isNext
+    ? "border-amber-400 ring-1 ring-amber-400/40 shadow-[0_0_20px_-4px_rgba(251,191,36,0.5)]"
+    : cardBorder[event.status];
+  const bgClass = event.isNext
+    ? "bg-amber-400/[0.12] hover:bg-amber-400/[0.16]"
+    : "bg-slate-900/60 hover:bg-slate-900";
   return (
     <article
-      className={`rounded-xl border ${cardBorder[event.status]} bg-slate-900/60 p-5 hover:bg-slate-900 transition`}
+      className={`rounded-xl border ${borderClass} ${bgClass} p-5 transition`}
     >
       <div className="flex items-start justify-between gap-3">
         <h3 className="font-semibold text-slate-100 leading-tight">
           {event.name}
         </h3>
-        <span
-          className={`shrink-0 text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full border ${leanStyles[event.lean]}`}
-        >
-          {event.lean === "Even" ? "Even" : `Favors ${event.lean}`}
-        </span>
+        <div className="flex shrink-0 items-center gap-2">
+          {event.isNext && (
+            <span className="text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full border bg-amber-400/15 text-amber-300 border-amber-400/40">
+              Up Next
+            </span>
+          )}
+          <span
+            className={`text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full border ${leanStyles[event.lean]}`}
+          >
+            {event.lean === "Even" ? "Even" : `Favors ${event.lean}`}
+          </span>
+        </div>
       </div>
       <div className="mt-4 flex items-center justify-between">
         <span

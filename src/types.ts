@@ -7,6 +7,7 @@ export interface GameEvent {
   name: string;
   lean: Lean;
   status: Status;
+  isNext?: boolean;
   scheduledFor?: string;
   notes?: string;
 }
